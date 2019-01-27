@@ -19,34 +19,34 @@ def UsePlatform():
 def Callback_taskmgr():
     cmd = "taskmgr.exe"
     os.popen(cmd)
-    
+
 def Callback_devmgmt():
     cmd = "devmgmt.msc"
     os.popen(cmd)
 def Callback_calc():
     cmd = "calc"
     os.popen(cmd)
-    
+
 def Callback_control():
     cmd = "control"
     os.popen(cmd)
-    
+
 def Callback_explorer():
     cmd = "explorer"
     os.popen(cmd)
-    
+
 def Callback_inetcpl():
     cmd = "inetcpl.cpl"
     os.popen(cmd)
-    
+
 def Callback_Mouse():
     cmd = "main.cpl"
     os.popen(cmd)
-    
+
 def Callback_msinfo32():
     cmd = "msinfo32"
     os.popen(cmd)
-    
+
 def Callback_mspaint():
     cmd = "mspaint"
     os.popen(cmd)
@@ -54,15 +54,15 @@ def Callback_mspaint():
 def Callback_mstsc():
     cmd = "mstsc"
     os.popen(cmd)
-    
+
 def Callback_networkLink():
     cmd = "ncpa.cpl"
     os.popen(cmd)
-    
+
 def Callback_notepad():
     cmd = "notepad"
     os.popen(cmd)
-    
+
 def Callback_regedit():
     cmd = "regedit.exe"
     os.popen(cmd)
@@ -70,11 +70,11 @@ def Callback_regedit():
 def Callback_systemAttr():
     cmd = "sysdm.cpl"
     os.popen(cmd)
-    
+
 def Callback_winver():
     cmd = "winver"
     os.popen(cmd)
-    
+
 def Callback_attributes():
     global flag
     if flag == 0:
@@ -83,9 +83,9 @@ def Callback_attributes():
     else:
         flag = 0
         top.attributes("-topmost", 1)#top
-    
-   
-flag = 0 
+
+
+flag = 0
 btn_names =[]
 btn_names_1 = ["设备管理器","任务管理器","计算器"]
 btn_names_2 = ["控制面板","资源管理器 ","Internet属性 "]
@@ -117,14 +117,14 @@ btn_func.append(btn_func_5)
 
 if __name__ == '__main__':
     top = Tk()
-    top.geometry('305x300')
+    #~ top.geometry('305x300')
     top.resizable(height=False,width=False)
     top.title(string=u'QuickRun')
     if 1 == UsePlatform():
     	top.attributes("-toolwindow", 1)#Toolbar style，this Property is only for windows，linux can not use
     top.attributes("-topmost", 1)#top
     top.attributes("-alpha",1)#transparency
-    
+
     for i in range(len(btn_names)):#row
         for j in range(len(btn_names[i])):#column
             Button(top, text =btn_names[i][j], command = btn_func[i][j],width=13).grid(row=i,column=j)
