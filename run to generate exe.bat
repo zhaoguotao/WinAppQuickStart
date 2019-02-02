@@ -1,5 +1,5 @@
 @echo off
 
-pyinstaller -F -c -i Predator.ico WinAppQuickStart_tkinter.py
+pyinstaller -F -w -i windows10.ico WinAppQuickStart_tkinter.py
 pause
 
